@@ -1,2 +1,2 @@
 # numerical-algebra
-Tutorials made for my students at UTS
+Linear Algebra Tutorials at UTS
