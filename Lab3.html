@@ -13132,7 +13132,7 @@ $$ x^{k+1}_i=\frac{1}{a_{ii}}\left(b_i-\sum^n_{j=1,j\neq i}a_{ij}x^k_j\right) $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -13163,7 +13163,7 @@ $$ x^{k+1}_i=\frac{1}{a_{ii}}\left(b_i-\sum^n_{j=1,j\neq i}a_{ij}x^k_j\right) $$
         <span class="n">s2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:],</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:])</span>
         <span class="n">x_new</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">s1</span> <span class="o">-</span> <span class="n">s2</span><span class="p">)</span> <span class="o">/</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>
 
-    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x_new</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-10</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">0.</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x_new</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">0.</span><span class="p">):</span>
         <span class="k">break</span>
 
     <span class="n">x</span> <span class="o">=</span> <span class="n">x_new</span>
@@ -13236,62 +13236,10 @@ Iteration 38: [1.99986753 4.00009649 6.00015148]
 Iteration 39: [2.00015148 4.00014197 6.00012047]
 Iteration 40: [2.00012047 3.9999845  5.99994634]
 Iteration 41: [1.99994634 3.99991293 5.99991452]
-Iteration 42: [1.99991452 3.99998409 6.00000675]
-Iteration 43: [2.00000675 4.00004612 6.00005169]
-Iteration 44: [2.00005169 4.00002247 6.00001087]
-Iteration 45: [2.00001087 3.99997959 5.99997303]
-Iteration 46: [1.99997303 3.99998108 5.99998595]
-Iteration 47: [1.99998595 4.00000646 6.00001167]
-Iteration 48: [2.00001167 4.00001286 6.00001152]
-Iteration 49: [2.00001152 3.99999992 5.99999651]
-Iteration 50: [1.99999651 3.99999249 5.99999229]
-Iteration 51: [1.99999229 3.99999789 5.99999983]
-Iteration 52: [1.99999983 4.00000377 6.00000444]
-Iteration 53: [2.00000444 4.0000023  6.00000137]
-Iteration 54: [2.00000137 3.99999847 5.99999781]
-Iteration 55: [1.99999781 3.99999822 5.99999858]
-Iteration 56: [1.99999858 4.00000038 6.00000087]
-Iteration 57: [2.00000087 4.00000115 6.00000108]
-Iteration 58: [2.00000108 4.00000011 5.9999998 ]
-Iteration 59: [1.9999998  3.99999936 5.99999932]
-Iteration 60: [1.99999932 3.99999976 5.99999992]
-Iteration 61: [1.99999992 4.0000003  6.00000037]
-Iteration 62: [2.00000037 4.00000023 6.00000015]
-Iteration 63: [2.00000015 3.99999989 5.99999983]
-Iteration 64: [1.99999983 3.99999984 5.99999986]
-Iteration 65: [1.99999986 4.00000002 6.00000006]
-Iteration 66: [2.00000006 4.0000001  6.0000001 ]
-Iteration 67: [2.0000001  4.00000002 5.99999999]
-Iteration 68: [1.99999999 3.99999995 5.99999994]
-Iteration 69: [1.99999994 3.99999997 5.99999999]
-Iteration 70: [1.99999999 4.00000002 6.00000003]
-Iteration 71: [2.00000003 4.00000002 6.00000002]
-Iteration 72: [2.00000002 3.99999999 5.99999999]
-Iteration 73: [1.99999999 3.99999999 5.99999999]
-Iteration 74: [1.99999999 4.         6.        ]
-Iteration 75: [2.         4.00000001 6.00000001]
-Iteration 76: [2.00000001 4.         6.        ]
-Iteration 77: [2.         4.         5.99999999]
-Iteration 78: [1.99999999 4.         6.        ]
-Iteration 79: [2. 4. 6.]
-Iteration 80: [2. 4. 6.]
-Iteration 81: [2. 4. 6.]
-Iteration 82: [2. 4. 6.]
-Iteration 83: [2. 4. 6.]
-Iteration 84: [2. 4. 6.]
-Iteration 85: [2. 4. 6.]
-Iteration 86: [2. 4. 6.]
-Iteration 87: [2. 4. 6.]
-Iteration 88: [2. 4. 6.]
-Iteration 89: [2. 4. 6.]
-Iteration 90: [2. 4. 6.]
-Iteration 91: [2. 4. 6.]
-Iteration 92: [2. 4. 6.]
-Iteration 93: [2. 4. 6.]
 Solution:
-[2. 4. 6.]
+[1.99994634 3.99991293 5.99991452]
 Error:
-[-6.09539086e-11  6.06474870e-11  1.59957381e-10]
+[ 3.18217134e-05 -1.42315492e-04 -2.76708478e-04]
 </pre>
 </div>
 </div>
@@ -13311,7 +13259,7 @@ $$ x^{k+1}_i=\frac{1}{a_{ii}}\left(b_i-\sum^{i-1}_{j=1}a_{ij}x^{k+1}_j-\sum^n_{j
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -13338,7 +13286,7 @@ $$ x^{k+1}_i=\frac{1}{a_{ii}}\left(b_i-\sum^{i-1}_{j=1}a_{ij}x^{k+1}_j-\sum^n_{j
         <span class="n">s1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:</span><span class="n">i</span><span class="p">],</span> <span class="n">x_new</span><span class="p">[:</span><span class="n">i</span><span class="p">])</span>
         <span class="n">s2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:],</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:])</span>
         <span class="n">x_new</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">s1</span> <span class="o">-</span> <span class="n">s2</span><span class="p">)</span> <span class="o">/</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>
-    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x_new</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x_new</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">):</span>
         <span class="k">break</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x_new</span>
 
@@ -13394,30 +13342,8 @@ Iteration 26: [1.99964358 4.         6.00023761]
 Iteration 27: [2.00023761 4.         5.99984159]
 Iteration 28: [1.99984159 4.         6.00010561]
 Iteration 29: [2.00010561 4.         5.9999296 ]
-Iteration 30: [1.9999296  4.         6.00004694]
-Iteration 31: [2.00004694 4.         5.99996871]
-Iteration 32: [1.99996871 4.         6.00002086]
-Iteration 33: [2.00002086 4.         5.99998609]
-Iteration 34: [1.99998609 4.         6.00000927]
-Iteration 35: [2.00000927 4.         5.99999382]
-Iteration 36: [1.99999382 4.         6.00000412]
-Iteration 37: [2.00000412 4.         5.99999725]
-Iteration 38: [1.99999725 4.         6.00000183]
-Iteration 39: [2.00000183 4.         5.99999878]
-Iteration 40: [1.99999878 4.         6.00000081]
-Iteration 41: [2.00000081 4.         5.99999946]
-Iteration 42: [1.99999946 4.         6.00000036]
-Iteration 43: [2.00000036 4.         5.99999976]
-Iteration 44: [1.99999976 4.         6.00000016]
-Iteration 45: [2.00000016 4.         5.99999989]
-Iteration 46: [1.99999989 4.         6.00000007]
-Iteration 47: [2.00000007 4.         5.99999995]
-Iteration 48: [1.99999995 4.         6.00000003]
-Iteration 49: [2.00000003 4.         5.99999998]
-Iteration 50: [1.99999998 4.         6.00000001]
-Iteration 51: [2.00000001 4.         5.99999999]
-Solution: [2.00000001 4.         5.99999999]
-Error: [2.35249278e-08 2.35249269e-08 0.00000000e+00]
+Solution: [2.00010561 4.         5.9999296 ]
+Error: [0.00017601 0.00017601 0.        ]
 </pre>
 </div>
 </div>
@@ -13437,7 +13363,7 @@ $$ x^{k+1}_i=x^{k}_i+\frac{\omega}{a_{ii}}\left(b_i-\sum^{i-1}_{j=1}a_{ij}x^{k+1
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -13466,7 +13392,7 @@ $$ x^{k+1}_i=x^{k}_i+\frac{\omega}{a_{ii}}\left(b_i-\sum^{i-1}_{j=1}a_{ij}x^{k+1
         <span class="n">s1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:</span><span class="n">i</span><span class="p">],</span> <span class="n">x_new</span><span class="p">[:</span><span class="n">i</span><span class="p">])</span>
         <span class="n">s2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">:],</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">:])</span>
         <span class="n">x_new</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">w</span><span class="o">*</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">s1</span> <span class="o">-</span> <span class="n">s2</span><span class="p">)</span> <span class="o">/</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>
-    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x_new</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x_new</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">):</span>
         <span class="k">break</span>
     <span class="n">x</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">x_new</span>
 
@@ -13511,24 +13437,25 @@ Iteration 15: [1.99810966 3.99939513 6.00011789]
 Iteration 16: [1.99911377 3.99994859 6.00034578]
 Iteration 17: [1.99972978 4.0001283  6.00028435]
 Iteration 18: [2.00000706 4.00013347 6.00016207]
-Iteration 19: [2.00008456 4.00008611 6.0000672 ]
-Iteration 20: [2.00007588 4.00004088 6.00001512]
-Iteration 21: [2.0000455  4.00001285 5.99999453]
-Iteration 22: [2.00002002 4.00000005 5.9999906 ]
-Iteration 23: [2.00000531 3.99999635 5.99999292]
-Iteration 24: [1.99999912 3.99999663 5.99999619]
-Iteration 25: [1.99999766 3.99999795 5.99999854]
-Iteration 26: [1.9999981  3.99999908 5.99999975]
-Iteration 27: [1.99999892 3.99999975 6.00000019]
-Iteration 28: [1.99999956 4.00000003 6.00000025]
-Iteration 29: [1.9999999  4.0000001  6.00000017]
-Iteration 30: [2.00000004 4.00000009 6.00000009]
-Solution: [2.00000004 4.00000009 6.00000009]
-Error: [-4.96459691e-08  1.20948416e-07  2.56858780e-07]
+Solution: [2.00000706 4.00013347 6.00016207]
+Error: [-0.000155    0.00011194  0.00036685]
 </pre>
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
 </div>
 </div>
 
